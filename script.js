@@ -6,6 +6,15 @@ const products = [
   { id: 4, name: "Product 4", price: 40 },
   { id: 5, name: "Product 5", price: 50 },
 ];
+if (!sessionStorage.getItem("cart")) {
+  sessionStorage.setItem(
+    "cart",
+    JSON.stringify([
+      { id: 1, name: "Product 1", price: 10 },
+      { id: 5, name: "Product 5", price: 50 }
+    ])
+  );
+}
 
 // DOM elements
 const productList = document.getElementById("product-list");
